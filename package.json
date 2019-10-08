@@ -1,0 +1,15 @@
+{
+  "name": "vungle",
+  "version": "1.0.0",
+  "description": "this is android vungle ad plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "android",
+    "vungle"
+  ],
+  "author": "Danish",
+  "license": "ISC"
+}
