@@ -1,8 +1,8 @@
 {
   "name": "vungle",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "this is android vungle ad plugin",
-  "main": "index.js",
+  "main": "vungle.js",
   "cordova": {
         "id": "cordova-plugin-vungle-ad",
         "platforms": [
