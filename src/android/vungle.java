@@ -1,4 +1,4 @@
-package cordova.plugin.vungle.ad.vungle;
+package cordova.plugin.vungle.ad;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
