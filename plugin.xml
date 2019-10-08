@@ -8,7 +8,7 @@
 	<platform name="android">
 		<config-file parent="/*" target="res/xml/config.xml">
 			<feature name="vungle">
-				<param name="android-package" value="cordova.plugin.vungle.ad" />
+				<param name="android-package" value="cordova.plugin.vungle.ad.vungle" />
 			</feature>
 		</config-file>
 		<config-file parent="/*" target="AndroidManifest.xml">
