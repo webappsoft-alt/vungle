@@ -37,8 +37,8 @@ public class vungle extends CordovaPlugin {
     }
 
    private void initSDK(JSONArray args, CallbackContext callback){
-           int p1= args.getJSONObject(0).getString("param1");
-           callback.success("Rewarded" + p1);
+           args.getJSONObject(0).getString("param1");
+           callback.success("Rewarded");
      try{
        final String appId = "5d8bd33efbcaba00189b410f";
 
