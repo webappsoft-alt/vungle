@@ -37,7 +37,8 @@ public class vungle extends CordovaPlugin {
     }
 
    private void initSDK(JSONArray args, CallbackContext callback){
-//      PACKAGE_NAME = getApplicationContext().getPackageName();
+           int p1= args.getJSONObject(0).getString("param1");
+           callback.success("Rewarded" + p1);
      try{
        final String appId = "5d8bd33efbcaba00189b410f";
 
@@ -52,6 +53,7 @@ public class vungle extends CordovaPlugin {
             @Override
             public void onSuccess() {   
                 makeToast("Vungle SDK initialized");
+                callback.success("Rewarded");
                 onAdLoad();
                 Log.d(LOG_TAG, "InitCallback - onSuccess");
                 Log.d(LOG_TAG, "Vungle SDK Version - " + com.vungle.warren.BuildConfig.VERSION_NAME);
