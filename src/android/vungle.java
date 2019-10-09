@@ -173,45 +173,6 @@ public class vungle extends CordovaPlugin {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        if (vungleNativeAd != null) {
-            vungleNativeAd.setAdVisibility(true);
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        if (vungleNativeAd != null) {
-            vungleNativeAd.setAdVisibility(true);
-        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        if (vungleNativeAd != null) {
-            vungleNativeAd.setAdVisibility(false);
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
-        if (vungleNativeAd != null) {
-            vungleNativeAd.setAdVisibility(false);
-        }
-    }
+ 
 
 }
