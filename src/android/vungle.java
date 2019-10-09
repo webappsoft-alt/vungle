@@ -24,7 +24,7 @@ import com.vungle.warren.VungleSettings;
  * This class echoes a string called from JavaScript.
  */
 public class vungle extends CordovaPlugin {
-
+         public static String PACKAGE_NAME;
          final String LOG_TAG = "VungleAdd";
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -37,7 +37,7 @@ public class vungle extends CordovaPlugin {
     }
 
    private void initSDK(JSONArray args, CallbackContext callback){
-     
+     PACKAGE_NAME = getApplicationContext().getPackageName();
      try{
        final String appId = "5d8bd33efbcaba00189b410f";
 
@@ -48,7 +48,7 @@ public class vungle extends CordovaPlugin {
                         .setMinimumSpaceForInit(21 * MEGABYTE)
                         .build();
 
-        Vungle.init(appId, cordova.plugin.vungle.ad, new InitCallback() {
+        Vungle.init(appId, getApplicationContext(), new InitCallback() {
             @Override
             public void onSuccess() {   
                 makeToast("Vungle SDK initialized");
@@ -92,7 +92,7 @@ public class vungle extends CordovaPlugin {
                 if (Vungle.canPlayAd(placementReferenceID)) {
                     final AdConfig adConfig = getAdConfig();
                     // Play Vungle ad
-                    Vungle.playAd(placementReferenceID, adConfig, vunglePlayAdCallback);
+                             Vungle.playAd(placementReferenceID, adConfig, vunglePlayAdCallback);
 
                 } else {
                     makeToast("Vungle ad not playable for " + placementReferenceID);
@@ -109,7 +109,7 @@ public class vungle extends CordovaPlugin {
         @Override
 
         public void onAdStart(final String placementReferenceID) {
-            Toast.makeText(cordova.plugin.vungle.ad,"Ad Start",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Ad Start",Toast.LENGTH_SHORT).show();
             Log.d(LOG_TAG, "PlayAdCallback - onAdStart" +
                     "\n\tPlacement Reference ID = " + placementReferenceID);
 
@@ -129,14 +129,14 @@ public class vungle extends CordovaPlugin {
 
         @Override
         public void onAdEnd(final String placementReferenceID, final boolean completed, final boolean isCTAClicked) {
-            Toast.makeText(cordova.plugin.vungle.ad,"Ad End",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Ad End",Toast.LENGTH_SHORT).show();
             Log.d(LOG_TAG, "PlayAdCallback - onAdEnd" +
                     "\n\tPlacement Reference ID = " + placementReferenceID +
                     "\n\tView Completed = " + completed + "" +
                     "\n\tDownload Clicked = " + isCTAClicked);
-            if(completed){
-                 callback.success("Rewarded");
-            }
+//             if(completed){
+//                  callback.success("Rewarded");
+//             }
         }
 
         @Override
@@ -170,7 +170,7 @@ public class vungle extends CordovaPlugin {
 
 
     private void makeToast(String message) {
-        Toast.makeText(cordova.plugin.vungle.ad, message, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
 
  
