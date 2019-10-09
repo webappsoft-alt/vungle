@@ -15,5 +15,15 @@
 			
 		</config-file>
 		<source-file src="src/android/vungle.java" target-dir="src/cordova/plugin-vungle-ad/vungle" />
+		<lib-file src="src/android/libs/converter-gson-2.5.0.jar"/>
+		<lib-file src="src/android/libs/gson-2.8.2.jar"/>
+		<lib-file src="src/android/libs/gson-2.8.2.jar"/>
+		<lib-file src="src/android/libs/logging-interceptor-3.12.0.jar"/>
+		<lib-file src="src/android/libs/okhttp-3.12.0.jar"/>
+		<lib-file src="src/android/libs/okio-1.15.0.jar"/>
+		<lib-file src="src/android/libs/publisher-sdk-android-6.4.11.jar"/>
+		<lib-file src="src/android/libs/retrofit-2.5.0.jar"/>
+		<lib-file src="src/android/libs/vng-moat-mobile-app-kit-2.5.1.jar"/>
+		<lib-file src="src/android/libs/publisher-sdk-android-6.4.11.aar"/>
 	</platform>
 	</plugin>
