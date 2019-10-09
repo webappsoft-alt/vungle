@@ -24,7 +24,7 @@ import com.vungle.warren.VungleSettings;
  * This class echoes a string called from JavaScript.
  */
 public class vungle extends CordovaPlugin {
- PACKAGE_NAME = getApplicationContext().getPackageName();
+
          final String LOG_TAG = "VungleAdd";
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -48,7 +48,7 @@ public class vungle extends CordovaPlugin {
                         .setMinimumSpaceForInit(21 * MEGABYTE)
                         .build();
 
-        Vungle.init(appId, getApplicationContext(), new InitCallback() {
+        Vungle.init(appId, cordova.plugin.vungle.ad, new InitCallback() {
             @Override
             public void onSuccess() {   
                 makeToast("Vungle SDK initialized");
@@ -109,7 +109,7 @@ public class vungle extends CordovaPlugin {
         @Override
 
         public void onAdStart(final String placementReferenceID) {
-            Toast.makeText(getApplicationContext(),"Ad Start",Toast.LENGTH_SHORT).show();
+            Toast.makeText(cordova.plugin.vungle.ad,"Ad Start",Toast.LENGTH_SHORT).show();
             Log.d(LOG_TAG, "PlayAdCallback - onAdStart" +
                     "\n\tPlacement Reference ID = " + placementReferenceID);
 
@@ -129,7 +129,7 @@ public class vungle extends CordovaPlugin {
 
         @Override
         public void onAdEnd(final String placementReferenceID, final boolean completed, final boolean isCTAClicked) {
-            Toast.makeText(getApplicationContext(),"Ad End",Toast.LENGTH_SHORT).show();
+            Toast.makeText(cordova.plugin.vungle.ad,"Ad End",Toast.LENGTH_SHORT).show();
             Log.d(LOG_TAG, "PlayAdCallback - onAdEnd" +
                     "\n\tPlacement Reference ID = " + placementReferenceID +
                     "\n\tView Completed = " + completed + "" +
@@ -170,7 +170,7 @@ public class vungle extends CordovaPlugin {
 
 
     private void makeToast(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+        Toast.makeText(cordova.plugin.vungle.ad, message, Toast.LENGTH_LONG).show();
     }
 
  
