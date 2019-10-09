@@ -24,7 +24,8 @@ import com.vungle.warren.VungleSettings;
  * This class echoes a string called from JavaScript.
  */
 public class vungle extends CordovaPlugin {
-
+ PACKAGE_NAME = getApplicationContext().getPackageName();
+         final String LOG_TAG = "VungleAdd";
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         
