@@ -25,7 +25,7 @@ import com.vungle.warren.VungleSettings;
  */
 public class vungle extends CordovaPlugin {
  Context context = this.cordova.getActivity().getApplicationContext();
-         final String LOG_TAG = "VungleAdd";
+  final String LOG_TAG = "VungleAdd";
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         
