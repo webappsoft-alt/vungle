@@ -14,7 +14,7 @@
 		<config-file parent="/*" target="AndroidManifest.xml">
 			
 		</config-file>
-		<source-file src="src/android/vungle.java" target-dir="src/cordova/plugin-vungle-ad/vungle" />
+		<source-file src="src/android/vungle.java" target-dir="src/cordova/plugin/vungle/ad/vungle" />
 		<lib-file src="src/android/libs/converter-gson-2.5.0.jar"/>
 		<lib-file src="src/android/libs/gson-2.8.2.jar"/>
 		<lib-file src="src/android/libs/gson-2.8.2.jar"/>
